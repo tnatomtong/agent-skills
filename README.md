@@ -40,6 +40,7 @@ List every `SKILL.md` in the repo:
 ### Productivity
 
 - **[management-talk](./skills/productivity/management-talk/SKILL.md)** — Rewrite engineer-to-engineer content for engineering-org leadership and shape it for the channel it's going to (JIRA, Slack, async standup, email, meeting talking-points).
+- **[mag-pr](./skills/productivity/mag-pr/SKILL.md)** — Create a branch, commit, push, and open a PR for MAG repos. Handles branch naming, commit message format, PR title/description template, and checklist population.
 
 ### Misc
 

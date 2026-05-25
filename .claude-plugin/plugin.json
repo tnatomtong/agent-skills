@@ -4,6 +4,7 @@
     "./skills/engineering/debug-mantra",
     "./skills/engineering/post-mortem",
     "./skills/engineering/scrutinize",
-    "./skills/productivity/management-talk"
+    "./skills/productivity/management-talk",
+    "./skills/productivity/mag-pr"
   ]
 }
