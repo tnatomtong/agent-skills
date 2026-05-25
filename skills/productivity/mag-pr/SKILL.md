@@ -42,7 +42,9 @@ Ask the user to confirm the title before committing if unsure.
 
 ## PR description
 
-All MAG data lake repos share a synced `pull_request_template.md`. Always read it before opening a PR and populate every section. The template structure is:
+Always read the actual `pull_request_template.md` file in the repo and populate every section it contains. The file is the source of truth — do not assume sections based on what is written here.
+
+The template shown below is the most common one across MAG data lake repos. The checklist rules below only apply when those sections are present in the actual file:
 
 ```
 # MAG Data Lakehouse Pull Request
@@ -79,7 +81,7 @@ If this PR is for test or main branch
 - [ ] I will post an expected result and my test result under the comment in my Jira ticket after merged
 ```
 
-### Checklist rules
+### Checklist rules (only apply when the section exists in the actual template)
 - **3a**: always `[x]` if ticket number is in the title
 - **3b**: tick only the target base branch
 - **3c**: `self-review` is always `[x]`; Pylint/Black/isort/comments are `[ ]` unless the user confirms
@@ -108,8 +110,14 @@ If this PR is for test or main branch
 - Write a short free-form description instead (1-2 bullets on what changed and the Jira ticket)
 - Target branch is `main`
 
+### tf-apps-tst and tf-application
+- Both use the "MAG Terraform Deployment" PR template (sections: Expected Changes, Deployment Notes, Deployment Tickets, Terraform Apply Order, Related GitHub PRs, Post deployment tasks)
+- tf-apps-tst: template is at `pull_request_template.md` in the repo root
+- tf-application: template is at `.github/PULL_REQUEST_TEMPLATE.md`
+- Target branch is `main` for both
+
 ### Data-lake-framework
-- Uses its own PR template (Release mode, Release notes, Crosscheck)
+- Uses its own PR template — sections are: 1 (Release mode), 2 (Release notes), 3a (Title), 3b (Quality of code), 3c (Releasing). There is no section 3d, so do not ask for a Jira comment link.
 - Target branch is `trunk`
 - Development releases: bump version in `src/magfw/__init__.py` (increment `.devN`) based on current `trunk` version before committing
 

@@ -100,6 +100,25 @@ Subject line is half the value.
 - **Body:** the JIRA-comment shape, but as flowing paragraphs separated by blank lines rather than bolded section labels. Two or three paragraphs is plenty.
 - **Sign off** with the next decision point that needs the recipient's attention, if any. If none, a plain *"— [Name]"* is fine.
 
+### Analysis notes
+
+A plain-text investigation summary your manager or lead can read, share with a vendor, or use in a discussion. Ask the user whether they want plain text or markdown formatting if not stated.
+
+Format rules:
+- First line: `ANALYSIS: <component> <short description>` followed by a line of `=` characters
+- Section headers in ALL CAPS, underlined with `-` characters
+- Summary data in a pipe-aligned table (pad columns with spaces for readability)
+- Factual language throughout — describe what the logs show, not who is at fault
+- Sections to use (include what applies):
+  - `SUMMARY TABLE` — one row per run/execution; columns are: identifier, date, duration, error count, overhead
+  - `TIMING BREAKDOWN` — optional; use when a single execution needs phase-level detail
+  - `ROOT CAUSE` — one paragraph explaining the mechanism in plain English
+  - `FEEDS AFFECTED` or equivalent detail section — ranked list with counts and dates
+  - `CONCLUSION` — two to four sentences; state the pattern, what a clean baseline looked like, and the risk if unresolved; no blame
+  - `LOG FILES` — reference list of the supporting log files
+
+Length: as long as needed, but each section should be concise. This format is not for public audiences — it is for internal leads and managers who will use it to understand the issue and discuss it with other parties.
+
 ### Meeting talking-points
 
 You're going to *say* this, not show it.
