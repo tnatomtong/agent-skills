@@ -1,7 +1,6 @@
 ---
 name: mag-pr
 description: Create a branch, commit, push, and open a PR for MAG repos. Trigger on /mag-pr and proactively when the user asks to commit and push, open or create a PR, wrap up or ship a task, or says things like "let's open a PR", "push this up", "create the PR", or "wrap this up".
-disable-model-invocation: true
 ---
 
 ## Git identity
