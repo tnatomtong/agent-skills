@@ -25,7 +25,16 @@ Examples:
 
 ## Commit message
 
-Use the PR title as the commit message (see format below).
+Use conventional commits format: `<type>: <short description>`
+
+Common types: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`
+
+Examples:
+- `feat: extend pre-commit hook to all datalake repos`
+- `fix: correct s3 path for uscom raw bucket`
+- `chore: bump magfw version to 5.5.5`
+
+Do NOT put the ticket number in the commit message.
 
 ## PR title format
 
