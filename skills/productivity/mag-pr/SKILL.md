@@ -25,12 +25,16 @@ Examples:
 
 ## Commit message
 
-A short plain description of what changed. No ticket number, no type prefix.
+Use conventional commits format: `<type>: <short description>`
+
+Common types: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`
 
 Examples:
-- `extend pre-commit hook to all datalake repos`
-- `correct s3 path for uscom raw bucket`
-- `bump magfw version to 5.5.5`
+- `feat: extend pre-commit hook to all datalake repos`
+- `fix: correct s3 path for uscom raw bucket`
+- `chore: bump magfw version to 5.5.5`
+
+Do NOT put the ticket number in the commit message.
 
 ## PR title format
 
@@ -132,3 +136,4 @@ If this PR is for test or main branch
 - Never force push to main/trunk/develop
 - Jira base URL: `https://markanthony.atlassian.net/browse/`
 - Never add `Co-Authored-By` or any Claude attribution to commit messages
+- When referencing PRs from a different repo in a PR description, always use the full GitHub URL (e.g. `https://github.com/MarkAnthonyGroup2/data-lake-row/pull/41`). Never use the short `#number` format — GitHub resolves `#number` as a PR in the same repo, which creates a wrong reference.
