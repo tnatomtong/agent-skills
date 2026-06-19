@@ -108,7 +108,7 @@ If this PR is for test or main branch
 5. Stage only the relevant files (never `git add -A` blindly)
 6. Commit — the repo's local config should already have the correct identity; no need to pass `-c user.name/email` unless the config is wrong
 7. Push: `git push -u origin <branch>`
-8. Open PR with `gh pr create` using the fully populated template body — show the full description to the user for review before running the command
+8. Show the fully populated PR description to the user and **wait for explicit approval** before running `gh pr create`. Do not open the PR automatically, even in auto mode, unless the user's original request explicitly said to skip review (e.g. "open the PR without asking").
    - Always add `--assignee tnatomtongMAG` to the `gh pr create` command
    - If `gh` is unavailable, provide the GitHub URL from the push output and the full description for the user to paste
 
@@ -124,6 +124,11 @@ If this PR is for test or main branch
 - tf-apps-tst: template is at `pull_request_template.md` in the repo root
 - tf-application: template is at `.github/PULL_REQUEST_TEMPLATE.md`
 - Target branch is `main` for both
+
+### MarkAnthonyGroup2/.github
+- The `.github` repo does not have its own PR template
+- Use the standard data-lake PR template at `data-lake/data-lake-core-functions/.github/pull_request_template.md` (read it from your local workspace) — do not assume the sections from memory
+- Target branch is `main`
 
 ### Data-lake-framework
 - Uses its own PR template — sections are: 1 (Release mode), 2 (Release notes), 3a (Title), 3b (Quality of code), 3c (Releasing). There is no section 3d, so do not ask for a Jira comment link.
