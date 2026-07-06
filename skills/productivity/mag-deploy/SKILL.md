@@ -148,8 +148,10 @@ Apply the identified changes to the matching workspace path in the target TF rep
 
 ### 3d: Framework version (if applicable)
 
+Before bumping `fw_version` anywhere in TF configs, always check the version is actually available first (i.e. already listed in the target repo's `releases.tf`, or the release/build has already completed). Do not bump to a version that hasn't been released or built yet.
+
 **dev->test:** if Step 1 produced a new release version, also:
-- Add the version to `us-west-2/datalake-framework/releases.tf` in the target TF repo
+- Check whether that version is already listed in `us-west-2/datalake-framework/releases.tf` in the target TF repo; add it if missing
 - Update `fw_version` in the relevant workspace's `locals.tf`
 
 **test->prod:** if Step 1 found a missing version in releases.tf, include that change here.
@@ -167,7 +169,7 @@ Show the full diff, then open a PR to `main` with `/mag-pr`:
   - If `datalake-framework/releases.tf` changed (either dev->test or test->prod): list `datalake-framework` FIRST. For dev->test add the note "CodeBuild must have completed the build before applying". For test->prod just note that framework must be applied before the data-lake workspace.
   - Then list the data-lake workspace(s) after
   - If no framework change: just list the workspace(s) in logical order
-- **Section 4:** link all related PRs (framework PRs, source TF PR, data-lake PRs) with their merge status. If no source PR exists, note the source commit or describe the diff instead.
+- **Section 4:** list the related PR links (framework PRs, source TF PR, data-lake PRs) as bullet points, no extra detail needed. If no source PR exists, note the source commit or describe the diff instead.
 - **Section 5:** "After TF is applied, merge <data-lake PR link(s)>"
 
 ---

@@ -23,6 +23,8 @@ Examples:
 - `deng-7487/precommit-hook-to-all`
 - `feature/vip-sftp-ep2`
 
+**Data-lake-framework exception:** never create a `release/*` branch unless the user directly asks for it. A `release/*` branch triggers the CodeBuild pipeline automatically.
+
 ## Commit message
 
 Use conventional commits format: `<type>: <short description>`
@@ -52,6 +54,10 @@ Ask the user to confirm the title before committing if unsure.
 ## PR description
 
 Always read the actual `pull_request_template.md` file in the repo and populate every section it contains. The file is the source of truth — do not assume sections based on what is written here.
+
+If a section in the template isn't needed for this particular PR, leave it blank. Do not write an explanation of why it doesn't apply.
+
+Any "Related PRs" section: just list the links as bullet points, no extra detail or commentary needed.
 
 The template shown below is the most common one across MAG data lake repos. The checklist rules below only apply when those sections are present in the actual file:
 
@@ -104,7 +110,10 @@ If this PR is for test or main branch
    - Target base branch (develop / test / main)
    - Jira comment link for the test results `Here:` line (develop PRs only)
 3. Show the proposed branch name and PR title to the user and wait for confirmation
-4. Create and switch to the new branch from the correct base: `git checkout -b <branch> origin/<base>`
+4. Branch: follow the user's instruction exactly.
+   - If they say to use the same branch, stay on it — do not create a new one.
+   - If they say to create a new branch, do: `git checkout -b <branch> origin/<base>`
+   - Do not second-guess or override what the user said.
 5. Stage only the relevant files (never `git add -A` blindly)
 6. Commit — the repo's local config should already have the correct identity; no need to pass `-c user.name/email` unless the config is wrong
 7. Push: `git push -u origin <branch>`
