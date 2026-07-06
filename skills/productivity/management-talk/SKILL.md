@@ -141,9 +141,9 @@ If the source is ambiguous, ask one question and stop.
 ## Output flow
 
 1. **Confirm the channel** if it's not stated.
-2. **Produce the draft** as a single chat block, formatted as the channel would render it.
-3. **Ask where it goes:**
-   - Default: print-only — the user copies it.
+2. **Produce the draft as raw, copyable markdown.** Do not print it as normal rendered chat text — the rendered form does not paste cleanly into JIRA. If the draft is short (roughly under ~50 lines), show it inside a fenced ` ```markdown ` block so the user copies the source. If it is longer, write it to a markdown file (in the repo's notes/docs area, or `/tmp` if there is no obvious home) and give the path instead of flooding the chat.
+3. **Where it goes:**
+   - Default: the user copies the markdown (from the code block or the file) and pastes it themselves.
    - JIRA back-post: only if the user explicitly says so. Show the exact ADF payload, wait for explicit *"post it"* / *"go ahead"* / *"yes,"* then `POST /rest/api/3/issue/<KEY>/comment`.
    - **Never post to Slack, email, or any non-JIRA channel from this skill.** Hand the draft to the user; they post it.
 4. **One iteration is normal, three is a smell.** If the user is on the third revision, ask what specific framing/audience assumption you're missing — don't keep tweaking blindly.
