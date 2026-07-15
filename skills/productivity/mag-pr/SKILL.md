@@ -123,16 +123,12 @@ If this PR is for test or main branch
 
 ## Repo-specific PR notes
 
-### tf-apps-dev
-- Do NOT use the `.github/PULL_REQUEST_TEMPLATE.md` in this repo — it is incorrect
-- Write a short free-form description instead (1-2 bullets on what changed and the Jira ticket)
-- Target branch is `main`
-
-### tf-apps-tst and tf-application
-- Both use the "MAG Terraform Deployment" PR template (sections: Expected Changes, Deployment Notes, Deployment Tickets, Terraform Apply Order, Related GitHub PRs, Post deployment tasks)
+### tf-apps-dev, tf-apps-tst, and tf-application
+- All three use the "MAG Terraform Deployment" PR template (sections: Expected Changes, Deployment Notes, Deployment Tickets, Terraform Apply Order, Related GitHub PRs, Post deployment tasks)
+- tf-apps-dev: template is at `.github/PULL_REQUEST_TEMPLATE.md`
 - tf-apps-tst: template is at `pull_request_template.md` in the repo root
 - tf-application: template is at `.github/PULL_REQUEST_TEMPLATE.md`
-- Target branch is `main` for both
+- Target branch is `main` for all three
 
 ### MarkAnthonyGroup2/.github
 - The `.github` repo does not have its own PR template
